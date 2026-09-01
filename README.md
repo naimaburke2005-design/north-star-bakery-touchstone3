@@ -16,19 +16,28 @@ JavaScript, or external font downloads are required.
 
 ## Preview
 
+Live website: https://naimaburke2005-design.github.io/north-star-bakery-touchstone3/
+
+Repository: https://github.com/naimaburke2005-design/north-star-bakery-touchstone3
+
 Open `index.html` in a browser. In GitHub Codespaces, open a terminal,
 run `python3 -m http.server 8000`, and use the Ports tab to open port 8000.
 
-## Publish on GitHub
+## GitHub Pages and submission
 
-Create a repository named `north-star-bakery-touchstone3`. Upload the
-contents of this folder into its root, including the `media` folder.
-In Settings > Pages, choose deployment from the `main` branch and `/ (root)`.
-GitHub displays the preview URL after deployment. Paste the actual
-repository and preview URLs into the design explanation document.
+GitHub Pages publishes this site from the `main` branch and `/ (root)`.
 
 The assignment requires the completed Word document as the single
 submission file. The repository contains the website files.
+
+## Review completed
+
+All four pages were reviewed in the live browser preview at desktop width
+and inside 375-pixel-wide preview frames. No horizontal content overflow
+was found. Navigation and the home page pickup link work; all images and
+the welcome audio load. The form blocks an empty submission using native
+HTML validation. Source checks also verified relative links, labels,
+headings, shared CSS, and the main text color contrast ratios.
 
 ## Project notes
 
