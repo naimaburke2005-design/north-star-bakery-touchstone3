@@ -46,72 +46,76 @@
       <p class="form-note" id="form-help">Fields marked required must be completed.
         This practice form does not send requests or place orders.
         Use sample information when trying it.</p>
-      <!-- HTML-only demonstration; no order-processing service. -->
-      <form action="contact.html" method="get"
+      <form id="bakery-request-form" action="contact.html" method="get" novalidate
         aria-describedby="form-help">
         <fieldset class="contact-fields">
           <legend>Your contact information</legend>
           <p>
             <label for="full-name">Full name (required)</label>
             <input type="text" id="full-name" name="full-name"
-              autocomplete="name" maxlength="80" required>
+              autocomplete="name" maxlength="80" required
+              aria-describedby="full-name-error">
+            <span class="error-message" id="full-name-error"></span>
           </p>
           <p>
             <label for="email">Email address (required)</label>
             <input type="email" id="email" name="email"
-              autocomplete="email" maxlength="120" required>
+              autocomplete="email" maxlength="120" required
+              aria-describedby="email-error">
+            <span class="error-message" id="email-error"></span>
           </p>
         </fieldset>
         <fieldset>
           <legend>Your request</legend>
           <p>
-            <label for="request-type">Request type
-              (required)</label>
-            <select id="request-type" name="request-type" required>
+            <label for="request-type">Request type (required)</label>
+            <select id="request-type" name="request-type" required
+              aria-describedby="request-type-error">
               <option value="">Choose a request type</option>
               <option value="preorder">Preorder request</option>
               <option value="question">General question</option>
             </select>
+            <span class="error-message" id="request-type-error"></span>
           </p>
           <p>
-            <label for="pickup-date">Preferred pickup date
-              (optional for questions)</label>
+            <label for="pickup-date">Preferred pickup date (optional for questions)</label>
             <input type="date" id="pickup-date" name="pickup-date"
-              aria-describedby="pickup-help">
-            <span class="field-help" id="pickup-help">For a preorder, choose a date when
-            the bakery is open. Pickup must be confirmed.</span>
+              aria-describedby="pickup-help pickup-date-error">
+            <span class="field-help" id="pickup-help">For a preorder, choose a date when the bakery is open. Pickup must be confirmed.</span>
+            <span class="error-message" id="pickup-date-error"></span>
           </p>
           <p>
-            <label for="item-details">Item details or question
-              (required, at least 10 characters)</label>
+            <label for="item-details">Item details or question (required, at least 10 characters)</label>
             <textarea id="item-details" name="item-details"
               rows="5" cols="28" minlength="10" maxlength="1000"
-              aria-describedby="item-help" required></textarea>
-            <span class="field-help" id="item-help">For preorders, include item names,
-            quantities, and any event details.</span>
+              aria-describedby="item-help item-details-error" required></textarea>
+            <span class="field-help" id="item-help">For preorders, include item names, quantities, and any event details.</span>
+            <span class="error-message" id="item-details-error"></span>
           </p>
           <p>
-            <label for="allergy-notes">Allergy notes
-              (optional)</label>
+            <label for="allergy-notes">Allergy notes (optional)</label>
             <textarea id="allergy-notes" name="allergy-notes"
               rows="3" cols="28" maxlength="500"
               aria-describedby="allergy-help"></textarea>
-            <span class="field-help" id="allergy-help">Tell us about any allergies so the
-            team can discuss ingredients and preparation with you
-            before an order is confirmed.</span>
+            <span class="field-help" id="allergy-help">Tell us about any allergies so the team can discuss ingredients and preparation with you before an order is confirmed.</span>
           </p>
         </fieldset>
+        <div class="saved-items-tools">
+          <button type="button" id="add-saved-favorites" class="secondary-button">Add saved favorites</button>
+          <span class="field-help" id="saved-items-message" aria-live="polite"></span>
+        </div>
         <p><button type="submit">Try sample request</button></p>
+        <p id="form-confirmation" class="form-confirmation" tabindex="-1" aria-live="polite"></p>
       </form>
     </section>
     </div>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-    <p class="project-note">&copy; 2026 North Star Bakery. Student project with sample
-      business details, staff, and prices.</p>
+    <p class="project-note">&copy; 2026 North Star Bakery. Student project with sample business details, staff, and prices.</p>
     <p><a href="contact.html">Contact the bakery</a></p>
     </div>
   </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
