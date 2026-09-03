@@ -71,6 +71,23 @@
         flavors in your request.</p>
     </section>
     </div>
+    <section class="favorites-panel" id="favorites" aria-labelledby="favorites-heading">
+      <p class="eyebrow">Make planning easier</p>
+      <h2 id="favorites-heading">Save your bakery favorites</h2>
+      <p>Select items you may want to preorder. Your choices are saved in this browser so you can come back to them or add them to the preorder form.</p>
+      <div class="favorite-options" id="favorite-options" aria-live="polite"></div>
+      <div class="saved-favorites">
+        <h3>Your saved favorites</h3>
+        <p id="favorites-empty">No favorites saved yet. Choose an item above to get started.</p>
+        <ul id="favorite-list" class="favorite-list"></ul>
+        <p id="favorites-status" class="field-help" aria-live="polite"></p>
+        <div class="favorites-actions">
+          <button type="button" id="clear-favorites" class="secondary-button">Clear favorites</button>
+          <a class="button" href="contact.html#request-form">Use favorites in a preorder</a>
+        </div>
+      </div>
+    </section>
+
     <section class="callout">
       <h2>Plan your pickup</h2>
       <p>Use the <a href="contact.html#request-form">preorder and
@@ -85,5 +102,6 @@
     <p><a href="contact.html">Contact the bakery</a></p>
     </div>
   </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
