@@ -1,18 +1,30 @@
-# North Star Bakery — Touchstone 3
+# North Star Bakery — Touchstone 4
 
-Four static HTML pages with a shared external stylesheet, responsive
-Flexbox layouts, and the original Sophia bakery media. No build step,
-JavaScript, or external font downloads are required.
+This project continues the North Star Bakery website from Touchstones 2 and 3 and adds client-side JavaScript interactivity without changing the client or visual design system.
 
 ## Files
 
-- `index.html`: welcome, responsive picture, weekly feature, hours.
-- `products.html`: product descriptions, prices, signature-loaf figure.
-- `about.html`: bakery story, sourcing, team, provided welcome audio.
-- `contact.html`: location, hours, labeled practice inquiry form.
-- `styles.css`: four-color palette, Georgia/Arial typography, mobile-first
-  layouts, and media queries at 48rem and 70rem.
+- `index.html`: welcome, responsive picture, weekly feature, and hours.
+- `products.html`: products plus the interactive bakery favorites tracker.
+- `about.html`: bakery story, sourcing, team, and provided welcome audio.
+- `contact.html`: location, hours, preorder/inquiry form, and inline validation feedback.
+- `styles.css`: the existing responsive visual design plus styles for favorites and validation states.
+- `script.js`: interactive favorites, localStorage, preorder helper, and JavaScript form validation.
 - `media/`: original provided PNG and MP3 assets.
+
+## Touchstone 4 feature
+
+The Products page includes a **Save Your Bakery Favorites** feature. Users can click buttons to save or remove bakery items. JavaScript updates the page immediately and stores the selected item IDs in `localStorage` under `northStarBakeryFavorites`. Saved selections load again when the page opens.
+
+On the Contact page, **Add saved favorites** copies the saved item names into the preorder details field. This gives the stored data a meaningful use across pages instead of saving data only as a demonstration.
+
+## JavaScript organization
+
+`script.js` uses an array of bakery item objects with an `id`, `name`, `category`, and `price`. Smaller functions handle reading and writing storage, rendering choices, toggling favorites, transferring favorites to the form, setting error messages, and validating each field.
+
+## Form validation
+
+The form uses JavaScript to prevent invalid submission and display messages next to the relevant fields. Checks include required name, email format, request type, minimum request length, and bakery-specific pickup-date rules. The form does not erase entered values when an error occurs. A valid sample submission shows an on-page confirmation message but does not place or send a real order.
 
 ## Preview
 
@@ -20,37 +32,8 @@ Live website: https://naimaburke2005-design.github.io/north-star-bakery-touchsto
 
 Repository: https://github.com/naimaburke2005-design/north-star-bakery-touchstone3
 
-Open `index.html` in a browser. In GitHub Codespaces, open a terminal,
-run `python3 -m http.server 8000`, and use the Ports tab to open port 8000.
-
-## GitHub Pages and submission
-
-GitHub Pages publishes this site from the `main` branch and `/ (root)`.
-
-The assignment requires the completed Word document as the single
-submission file. The repository contains the website files.
-
-## Review completed
-
-All four pages were reviewed in the live browser preview at desktop width
-and inside 375-pixel-wide preview frames. No horizontal content overflow
-was found. Navigation and the home page pickup link work; all images and
-the welcome audio load. The form blocks an empty submission using native
-HTML validation. Source checks also verified relative links, labels,
-headings, shared CSS, and the main text color contrast ratios.
+GitHub Pages publishes the site from the `main` branch and `/ (root)`.
 
 ## Project notes
 
-The story, staff, address, hours, and prices are fictional sample content
-permitted by the scenario. The form is a static demonstration: it uses
-built-in browser validation and reloads `contact.html` with the supplied
-sample values in the URL; it does not send an inquiry or place an order.
-
-Use sample information when testing. The pickup date is optional so a
-visitor can ask a general question without selecting a date.
-
-## Sources
-
-- https://app.sophia.org/tutorials/client-scenarios
-- https://app.sophia.org/tutorials/client-information-update
-- Provided assets: Sophia Bakery_c.zip
+The story, staff, address, hours, and prices are fictional sample content permitted by the scenario. The form is a static student-project demonstration and does not send an inquiry or place an order.
